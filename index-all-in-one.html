@@ -1,0 +1,431 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Block Library</title> 
+  <script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		// Set current year in footer
+		document.addEventListener("DOMContentLoaded", () => {
+		  document.getElementById("year").textContent = new Date().getFullYear();
+		});
+	</script>
+  <meta name="description" content="Nature-inspired designs and landscapes. Reconnect with nature through our professional services.">
+  <meta name="keywords" content="nature, landscape, garden, design, outdoor">
+</head>
+<style>
+#navLinksMobile {
+  transition: all 0.3s ease;
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+  /* Add active state for current section in navigation */
+  .active-nav-item {
+    color: #1a5c1a;
+    font-weight: 600;
+  }
+
+a:focus, button:focus {
+  outline: 2px solid #1a5c1a;
+  outline-offset: 2px;
+}
+</style>
+ 
+<body class="box-border m-0 p-0 font-sans leading-relaxed bg-[#f6f9f4] text-[#333]">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:bg-white focus:px-4 focus:py-2 focus:text-green-800 focus:font-bold focus:z-[9999] focus:rounded">
+    Skip to content
+  </a>
+
+<nav  aria-label="Main navigation" class="bg-[#e5f5e0] sticky top-0 z-[1000]">
+  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+    <div class="font-bold text-xl text-green-800">🌿 NatureSite</div>
+
+<ul id="navLinks" class="hidden md:flex gap-6 list-none text-green-800 font-medium transition-colors duration-200">
+  <li><a href="#home" class="hover:text-green-900">Home</a></li>
+  <li><a href="#about" class="hover:text-green-900">About</a></li>
+  <li><a href="#services" class="hover:text-green-900">Features</a></li>
+  <li><a href="#gallery" class="hover:text-green-900">Gallery</a></li>
+  <li><a href="#contact" class="hover:text-green-900">Contact</a></li>
+  <li><a href="#prices" class="hover:text-green-900">Prices</a></li>
+</ul>
+
+<button id="burger" class="md:hidden text-2xl text-green-800" aria-expanded="false" aria-controls="navLinksMobile">
+  ☰
+</button>
+
+<!-- Mobile Menu (same updates) -->
+<ul id="navLinksMobile" class="hidden flex-col gap-6 bg-[#e5f5e0] absolute top-[64px] right-5 p-4 shadow-md md:hidden list-none text-green-800 font-medium transition-all duration-200">
+  <li><a href="#home" class="hover:text-green-900">Home</a></li>
+  <li><a href="#about" class="hover:text-green-900">About</a></li>
+  <li><a href="#services" class="hover:text-green-900">Features</a></li>
+  <li><a href="#gallery" class="hover:text-green-900">Gallery</a></li>
+  <li><a href="#contact" class="hover:text-green-900">Contact</a></li>
+  <li><a href="#prices" class="hover:text-green-900">Prices</a></li>
+</ul>
+</nav>
+
+
+<main id="main">
+<section  id="home" class="relative text-white text-center py-32 px-4 bg-[url('./assets/images/hero-nature.jpg')] bg-cover bg-center">
+  <div class="absolute inset-0 bg-gradient-to-b from-green-700/30 to-green-900/30 z-0"></div>
+
+  <div class="relative max-w-3xl mx-auto z-10">
+    <h1 class="text-5xl md:text-4xl font-bold mb-4 drop-shadow-md">Reconnect with Nature</h1>
+    <p class="text-xl md:text-base mb-8 drop-shadow-sm">
+      Breathe in the green. Discover the beauty of natural landscapes and outdoor design.
+    </p>
+<a href="#about"
+   class="inline-block px-8 py-3 bg-green-700 hover:bg-green-900 text-white font-bold rounded transition-colors duration-300">
+  Explore Now
+</a>
+  </div>
+</section>
+
+
+<section id="about" class="bg-[#f1f8f4] py-16 px-4">
+  <div class="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-12">
+    
+    <!-- Text Block -->
+    <div class="w-full lg:w-1/2 text-center lg:text-left">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold text-green-800 mb-4">
+        About Our Mission
+      </h2>
+      <p class="text-base sm:text-lg md:text-[1.1rem] text-gray-700 leading-relaxed">
+        We believe in creating spaces that harmonize with the natural world. Our landscapes are designed to restore balance, invite serenity, and celebrate the wild beauty of nature.
+      </p>
+    </div>
+    
+    <!-- Image Block -->
+    <div class="w-full lg:w-1/2">
+      <img 
+        src="./assets/images/about-nature.jpg"
+        alt="Lush green natural landscape with trees"
+        width="800"
+        height="600"
+        loading="lazy"
+        class="w-full max-w-full h-auto rounded-lg shadow-lg object-cover"
+      />
+    </div>
+
+  </div>
+</section>
+
+
+
+<section  id="services"  class="bg-white py-16 px-4">
+  <div class="max-w-7xl mx-auto text-center">
+    <h2 class="text-3xl text-green-800 font-semibold mb-12">Our Services</h2>
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="bg-[#f1f8f4] p-8 rounded-xl shadow-md hover:-translate-y-1 hover:shadow-xl transition duration-300">
+        <h3 class="text-xl text-green-700 font-semibold mb-4">Landscape Design</h3>
+        <p class="text-gray-700 leading-relaxed">
+          Tailored outdoor layouts with eco-friendly and artistic principles.
+        </p>
+      </div>
+      <div class="bg-[#f1f8f4] p-8 rounded-xl shadow-md hover:-translate-y-1 hover:shadow-xl transition duration-300">
+        <h3 class="text-xl text-green-700 font-semibold mb-4">Garden Planning</h3>
+        <p class="text-gray-700 leading-relaxed">
+          We design green spaces that thrive through every season.
+        </p>
+      </div>
+      <div class="bg-[#f1f8f4] p-8 rounded-xl shadow-md hover:-translate-y-1 hover:shadow-xl transition duration-300">
+        <h3 class="text-xl text-green-700 font-semibold mb-4">Natural Elements</h3>
+        <p class="text-gray-700 leading-relaxed">
+          Incorporating stone, wood, and water to enhance organic harmony.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="gallery" class="bg-[#eaf5ea] py-16 px-4">
+  <div class="max-w-7xl mx-auto text-center">
+    <h2 class="text-3xl text-green-800 font-semibold mb-12">Our Recent Projects</h2>
+    <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+      <div class="overflow-hidden rounded-xl shadow-md transition-transform duration-300 hover:scale-105">
+        <img src="./assets/images/gallery1.jpg" 
+     alt="Garden path" 
+     width="400" 
+     height="300"
+     loading="lazy" 
+     class="w-full h-auto object-cover block" />
+      </div>
+      <div class="overflow-hidden rounded-xl shadow-md transition-transform duration-300 hover:scale-105">
+        <img src="./assets/images/gallery2.jpg" 
+     alt="Garden path" 
+     width="400" 
+     height="300"
+     loading="lazy" 
+     class="w-full h-auto object-cover block" />
+      </div>
+      <div class="overflow-hidden rounded-xl shadow-md transition-transform duration-300 hover:scale-105">
+        <img src="./assets/images/gallery3.jpg" 
+     alt="Garden path" 
+     width="400" 
+     height="300"
+     loading="lazy" 
+     class="w-full h-auto object-cover block" />
+      </div>
+      <div class="overflow-hidden rounded-xl shadow-md transition-transform duration-300 hover:scale-105">
+        <img src="./assets/images/gallery4.jpg" 
+     alt="Garden path" 
+     width="400" 
+     height="300"
+     loading="lazy" 
+     class="w-full h-auto object-cover block" />
+      </div>
+      <div class="overflow-hidden rounded-xl shadow-md transition-transform duration-300 hover:scale-105">
+        <img src="./assets/images/gallery5.jpg" 
+     alt="Garden path" 
+     width="400" 
+     height="300"
+     loading="lazy" 
+     class="w-full h-auto object-cover block" />
+      </div>
+      <div class="overflow-hidden rounded-xl shadow-md transition-transform duration-300 hover:scale-105">
+        <img src="./assets/images/gallery6.jpg" 
+     alt="Garden path" 
+     width="400" 
+     height="300"
+     loading="lazy" 
+     class="w-full h-auto object-cover block" />
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section  id="contact" class="bg-[#f4fff5] py-16 px-4">
+  <div class="max-w-xl mx-auto text-center">
+    <h2 class="text-3xl text-green-800 font-semibold mb-2">Let’s Talk</h2>
+    <p class="text-gray-600 text-base mb-8">Have a question or want to work with us? Send a message!</p>
+
+    <form class="flex flex-col gap-5" action="#" method="POST">
+      <input 
+        type="text" 
+        name="name" 
+        placeholder="Your Name" 
+        required 
+        class="p-4 border border-[#c8e6c9] rounded-lg text-base focus:outline-none focus:border-[#81c784] focus:ring-2 focus:ring-[#81c784]/30"
+      />
+      <input 
+        type="email" 
+        name="email" 
+        placeholder="Your Email" 
+        required 
+        class="p-4 border border-[#c8e6c9] rounded-lg text-base focus:outline-none focus:border-[#81c784] focus:ring-2 focus:ring-[#81c784]/30"
+      />
+      <textarea 
+        name="message" 
+        rows="5" 
+        placeholder="Your Message" 
+        required 
+        class="p-4 border border-[#c8e6c9] rounded-lg text-base resize-none focus:outline-none focus:border-[#81c784] focus:ring-2 focus:ring-[#81c784]/30"
+      ></textarea>
+      <button 
+        type="submit" 
+        class="bg-green-700 text-white py-4 px-6 rounded-lg text-base transition-colors duration-300 hover:bg-green-800"
+      >
+        Send Message
+      </button>
+    </form>
+  </div>
+</section>
+
+
+
+<section   id="prices" class="bg-[#eaf5ea] py-16 px-4 text-center">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl text-green-800 font-semibold mb-2">Choose Your Plan</h2>
+    <p class="text-gray-600 mb-12">Simple pricing for every need. No hidden fees.</p>
+
+    <div class="flex flex-wrap justify-center gap-8">
+      
+      <!-- Starter Plan -->
+      <div class="bg-white border-2 border-[#c8e6c9] rounded-xl p-8 w-72 shadow-md hover:-translate-y-1 transition-transform">
+        <h3 class="text-green-800 text-xl font-semibold mb-2">Starter</h3>
+        <p class="text-3xl text-green-700 my-4">$29</p>
+        <ul class="text-gray-700 mb-6">
+          <li class="my-2">Basic design package</li>
+          <li class="my-2">Email support</li>
+          <li class="my-2">1 revision</li>
+        </ul>
+        <button class="bg-green-700 text-white px-6 py-3 rounded-md font-bold transition-colors hover:bg-green-800">Get Started</button>
+      </div>
+
+      <!-- Pro Plan (Highlighted) -->
+      <div class="bg-[#f1fff3] border-2 border-[#66bb6a] rounded-xl p-8 w-72 shadow-md hover:-translate-y-1 transition-transform">
+        <h3 class="text-green-800 text-xl font-semibold mb-2">Pro</h3>
+        <p class="text-3xl text-green-700 my-4">$59</p>
+        <ul class="text-gray-700 mb-6">
+          <li class="my-2">Custom design solutions</li>
+          <li class="my-2">Priority support</li>
+          <li class="my-2">3 revisions</li>
+        </ul>
+        <button class="bg-green-700 text-white px-6 py-3 rounded-md font-bold transition-colors hover:bg-green-800">Choose Plan</button>
+      </div>
+
+      <!-- Ultimate Plan -->
+      <div class="bg-white border-2 border-[#c8e6c9] rounded-xl p-8 w-72 shadow-md hover:-translate-y-1 transition-transform">
+        <h3 class="text-green-800 text-xl font-semibold mb-2">Ultimate</h3>
+        <p class="text-3xl text-green-700 my-4">$99</p>
+        <ul class="text-gray-700 mb-6">
+          <li class="my-2">Full-featured design</li>
+          <li class="my-2">24/7 support</li>
+          <li class="my-2">Unlimited revisions</li>
+        </ul>
+        <button class="bg-green-700 text-white px-6 py-3 rounded-md font-bold transition-colors hover:bg-green-800">Go Premium</button>
+      </div>
+      
+    </div>
+  </div>
+</section>
+</main>
+
+
+<footer class="bg-green-800 text-white text-center px-4 pt-12 pb-4">
+  <div class="max-w-5xl mx-auto">
+    
+    <div class="mb-6">
+      <h3 class="text-2xl font-semibold mb-2">🌱 NatureCraft</h3>
+      <p class="text-sm">Designs inspired by nature. Grow your web presence with us.</p>
+    </div>
+
+<nav  aria-label="Footer navigation" class="flex justify-center flex-wrap gap-8 my-8">
+  <a href="#home" class="text-[#a5d6a7] hover:text-white transition-colors">Home</a>
+  <a href="#about" class="text-[#a5d6a7] hover:text-white transition-colors">About</a>
+  <a href="#services" class="text-[#a5d6a7] hover:text-white transition-colors">Services</a>
+  <a href="#gallery" class="text-[#a5d6a7] hover:text-white transition-colors">Gallery</a>
+  <a href="#contact" class="text-[#a5d6a7] hover:text-white transition-colors">Contact</a>
+  <a href="#prices" class="text-[#a5d6a7] hover:text-white transition-colors">Prices</a>
+</nav>
+
+    <div class="text-sm text-[#c8e6c9]">
+      <p>&copy; <span id="year"></span> NatureCraft. All rights reserved.</p>
+    </div>
+    
+  </div>
+</footer>
+
+<script>
+
+// Smooth scrolling for all anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    // Close mobile menu if open
+    navLinksMobile.classList.add("hidden");
+    
+    // Get the target section
+    const targetId = this.getAttribute('href');
+    if (targetId === '#') return;
+    
+    const targetSection = document.querySelector(targetId);
+    if (targetSection) {
+      // Calculate the scroll position (accounting for fixed header)
+      const headerHeight = document.querySelector('nav').offsetHeight;
+      const targetPosition = targetSection.offsetTop - headerHeight;
+      
+      // Smooth scroll
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+      
+      // Update URL without page reload
+      history.pushState(null, null, targetId);
+    }
+  });
+});
+
+burger.addEventListener("click", () => {
+  const isExpanded = burger.getAttribute('aria-expanded') === 'true';
+  burger.setAttribute('aria-expanded', !isExpanded);
+  navLinksMobile.classList.toggle("hidden");
+});
+
+
+
+// Close menu when clicking outside
+document.addEventListener("click", (e) => {
+  const isClickInside = navLinksMobile.contains(e.target) || burger.contains(e.target);
+  if (!isClickInside) {
+    navLinksMobile.classList.add("hidden");
+  }
+});
+
+// Highlight active section in navigation
+function highlightActiveSection() {
+  const sections = document.querySelectorAll('section[id]'); 
+  const navItems = document.querySelectorAll('nav a[href^="#"], footer a[href^="#"]');
+  
+  let currentSection = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    const headerHeight = document.querySelector('nav').offsetHeight;
+    
+    if (window.scrollY >= (sectionTop - headerHeight - 50) &&
+        window.scrollY < (sectionTop + sectionHeight - headerHeight - 50)) {
+      currentSection = '#' + section.id;
+    }
+  });
+  
+  navItems.forEach(item => {
+    item.classList.remove('active-nav-item');
+    if (item.getAttribute('href') === currentSection) {
+      item.classList.add('active-nav-item');
+    }
+  });
+}
+
+// Run on scroll and page load
+window.addEventListener('scroll', highlightActiveSection);
+window.addEventListener('load', highlightActiveSection);
+
+// Update form validation to include success handling
+if (form) {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const inputs = form.querySelectorAll('input, textarea');
+    let isValid = true;
+    
+    inputs.forEach(input => {
+      if (!input.value.trim()) {
+        input.classList.add('border-red-500');
+        isValid = false;
+      } else {
+        input.classList.remove('border-red-500');
+      }
+    });
+    
+    if (isValid) {
+      // Here you would typically send data to server
+      alert('Message sent successfully!');
+      form.reset();
+    } else {
+      alert('Please fill in all fields');
+    }
+  });
+}
+
+
+</script>
+
+</body>
+</html>
